@@ -117,14 +117,23 @@ export class MainScene extends Phaser.Scene {
     const endCardSprite = this.add.sprite(
       this.cameras.main.centerX,
       0,
-      "gameAtlas",
-      "Group 640.png"
+      "atlas",
+      "logo.png"
     );
 
     endCardSprite.setOrigin(0.5, 1);
-    const scaleX = (config.width - config.xGutter) / endCardSprite.width;
+    const scaleX = config.width / 3 / endCardSprite.width;
     endCardSprite.setScale(scaleX);
-    endCardSprite.y = config.height - config.yGutter;
+    endCardSprite.y = 200;
+
+    this.tweens.add({
+      targets: endCardSprite,
+      scale: endCardSprite.scale * 1.2,
+      duration: 1000,
+      ease: "Power2",
+      yoyo: true,
+      repeat: -1,
+    });
 
     endCardSprite.setInteractive();
     this.input.once("pointerdown", () => {
