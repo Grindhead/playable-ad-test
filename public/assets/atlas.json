@@ -10,7 +10,7 @@
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_1a2176f2-baf4-4d87-97f4-f934ecb76ac3.png",
+					"filename": "image-1.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -31,7 +31,7 @@
 					}
 				},
 				{
-					"filename": "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_1da69794-97c4-4388-a4d0-6c7921766c97.png",
+					"filename": "image-2.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -73,7 +73,7 @@
 					}
 				},
 				{
-					"filename": "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_9d3565cc-eaf6-4ae0-9ed4-db4fe6edc6a5.png",
+					"filename": "image-3.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -94,7 +94,7 @@
 					}
 				},
 				{
-					"filename": "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_96264e28-cb83-4dc7-a1b4-ab5dc2238aa3.png",
+					"filename": "image-4.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -115,7 +115,7 @@
 					}
 				},
 				{
-					"filename": "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_fb02a2bc-7366-4c01-a8f6-2098bc0b4dba.png",
+					"filename": "image-5.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -136,7 +136,7 @@
 					}
 				},
 				{
-					"filename": "Group 643.png",
+					"filename": "close.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -157,7 +157,7 @@
 					}
 				},
 				{
-					"filename": "Group 644.png",
+					"filename": "heart.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -178,7 +178,7 @@
 					}
 				},
 				{
-					"filename": "Group 640@2x.png",
+					"filename": "logo.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -199,7 +199,7 @@
 					}
 				},
 				{
-					"filename": "Frame-13.png",
+					"filename": "back.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -225,6 +225,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:2075f5faf0f549aebe75943d6ba20369:c5e9afe4ef6635f90600fd65942fad91:5207f0b033e8998cf68e90902b6701b9$"
+		"smartupdate": "$TexturePacker:SmartUpdate:8e7b02218b9347283f3bd0e073267d5d:e7f21d6581d98ec52fb9677a1f7e1471:5207f0b033e8998cf68e90902b6701b9$"
 	}
 }

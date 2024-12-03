@@ -16,11 +16,11 @@ export class MainScene extends Phaser.Scene {
   create() {
     // Create array of image frames from atlas
     const imageFrames = [
-      "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_1a2176f2-baf4-4d87-97f4-f934ecb76ac3.png",
-      "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_1da69794-97c4-4388-a4d0-6c7921766c97.png",
-      "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_9d3565cc-eaf6-4ae0-9ed4-db4fe6edc6a5.png",
-      "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_96264e28-cb83-4dc7-a1b4-ab5dc2238aa3.png",
-      "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_fb02a2bc-7366-4c01-a8f6-2098bc0b4dba.png",
+      "image-1.png",
+      "image-2.png",
+      "image-3.png",
+      "image-4.png",
+      "image-5.png",
     ];
 
     // Create and position all images
@@ -118,7 +118,7 @@ export class MainScene extends Phaser.Scene {
       this.cameras.main.centerX,
       0,
       "gameAtlas",
-      "lowkeys.png"
+      "Group 640.png"
     );
 
     endCardSprite.setOrigin(0.5, 1);
