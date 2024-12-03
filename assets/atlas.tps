@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>6</int>
         <key>texturePackerVersion</key>
-        <string>7.4.0</string>
+        <string>7.5.0</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -98,7 +98,7 @@
             <key>freeSizeMode</key>
             <enum type="AlgorithmSettings::AlgorithmFreeSizeMode">Best</enum>
             <key>sizeConstraints</key>
-            <enum type="AlgorithmSettings::SizeConstraints">AnySize</enum>
+            <enum type="AlgorithmSettings::SizeConstraints">POT</enum>
             <key>forceSquared</key>
             <false/>
             <key>maxRects</key>
@@ -173,26 +173,7 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_1a2176f2-baf4-4d87-97f4-f934ecb76ac3.png</key>
-            <key type="filename">Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_1da69794-97c4-4388-a4d0-6c7921766c97.png</key>
-            <key type="filename">Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_96264e28-cb83-4dc7-a1b4-ab5dc2238aa3.png</key>
-            <key type="filename">Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_9d3565cc-eaf6-4ae0-9ed4-db4fe6edc6a5.png</key>
-            <key type="filename">Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_fb02a2bc-7366-4c01-a8f6-2098bc0b4dba.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>147,147,294,294</rect>
-                <key>scale9Paddings</key>
-                <rect>147,147,294,294</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">Frame-13.png</key>
+            <key type="filename">back.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -207,7 +188,8 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Group 640@2x.png</key>
+            <key type="filename">close.png</key>
+            <key type="filename">heart.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -216,14 +198,15 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>90,25,179,50</rect>
+                <rect>83,83,167,167</rect>
                 <key>scale9Paddings</key>
-                <rect>90,25,179,50</rect>
+                <rect>83,83,167,167</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Group 643.png</key>
-            <key type="filename">Group 644.png</key>
+            <key type="filename">image-1.png</key>
+            <key type="filename">image-2.png</key>
+            <key type="filename">image-3.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -232,9 +215,24 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>83,83,167,167</rect>
+                <rect>147,147,294,294</rect>
                 <key>scale9Paddings</key>
-                <rect>83,83,167,167</rect>
+                <rect>147,147,294,294</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">logo.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>90,25,179,50</rect>
+                <key>scale9Paddings</key>
+                <rect>90,25,179,50</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -250,6 +248,21 @@
                 <rect>213,31,426,62</rect>
                 <key>scale9Paddings</key>
                 <rect>213,31,426,62</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">phonemockup.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>102,202,203,404</rect>
+                <key>scale9Paddings</key>
+                <rect>102,202,203,404</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
