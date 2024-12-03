@@ -8,6 +8,8 @@ export class MainScene extends Phaser.Scene {
 
   private lowkeys: Phaser.GameObjects.Sprite;
 
+  private phoneOverlay: Phaser.GameObjects.Sprite;
+
   constructor() {
     super("MainScene");
   }
@@ -26,10 +28,10 @@ export class MainScene extends Phaser.Scene {
       image.setScale(scaleX);
 
       // Position image relative to center of screen
-      image.x =
-        this.cameras.main.centerX +
-        config.width * (index - this.currentImageIndex);
-      image.y = 100;
+      image.x = this.images[index - 1]
+        ? this.images[index - 1].x + image.displayWidth
+        : -image.displayWidth / 2;
+      image.y = 40;
 
       this.images.push(image);
     });
@@ -83,6 +85,32 @@ export class MainScene extends Phaser.Scene {
       if (this.currentImageIndex >= 2) {
         this.time.delayedCall(500, () => this.showEndCard());
       }
+    });
+
+    this.phoneOverlay = this.add.sprite(
+      this.cameras.main.centerX,
+      this.cameras.main.centerY,
+      "atlas",
+      "phonemockup.png"
+    );
+
+    // Create a custom mask shape if needed
+    const maskShape = this.make.graphics();
+    maskShape.fillStyle(0xffffff, 0.5);
+    maskShape.fillRoundedRect(
+      0, // adjust these values
+      this.phoneOverlay.y - this.phoneOverlay.height / 2, // to match your phone overlay
+      this.phoneOverlay.width - config.xGutter, // width
+      this.phoneOverlay.height, // height
+      55 // corner radius
+    );
+
+    // Create a geometry mask from the shape
+    const mask = maskShape.createGeometryMask();
+
+    // Apply the mask to all images
+    this.images.forEach((image) => {
+      image.setMask(mask);
     });
   }
 
