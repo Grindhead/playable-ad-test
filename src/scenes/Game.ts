@@ -15,13 +15,7 @@ export class MainScene extends Phaser.Scene {
 
   create() {
     // Create array of image frames from atlas
-    const imageFrames = [
-      "image-1.png",
-      "image-2.png",
-      "image-3.png",
-      "image-4.png",
-      "image-5.png",
-    ];
+    const imageFrames = ["image-1.png", "image-2.png", "image-3.png"];
 
     // Create and position all images
     imageFrames.forEach((frame, index) => {
@@ -32,8 +26,10 @@ export class MainScene extends Phaser.Scene {
       const scaleX = (config.width - config.xGutter) / image.width;
       image.setScale(scaleX);
 
-      // Position image (initially off-screen to the right)
-      image.x = config.width * (index - this.currentImageIndex);
+      // Position image relative to center of screen
+      image.x =
+        this.cameras.main.centerX +
+        config.width * (index - this.currentImageIndex);
       image.y = 100;
 
       this.images.push(image);
@@ -85,7 +81,7 @@ export class MainScene extends Phaser.Scene {
       this.isDragging = false;
 
       // Check if we should show end card after last image
-      if (this.currentImageIndex === this.images.length - 1) {
+      if (this.currentImageIndex >= 2) {
         this.time.delayedCall(500, () => this.showEndCard());
       }
     });
@@ -93,7 +89,9 @@ export class MainScene extends Phaser.Scene {
 
   private updateImagesPosition(dragDelta: number) {
     this.images.forEach((image, index) => {
-      const baseX = config.width * (index - this.currentImageIndex);
+      const baseX =
+        this.cameras.main.centerX +
+        config.width * (index - this.currentImageIndex);
       image.x = baseX + dragDelta;
     });
   }
@@ -102,7 +100,9 @@ export class MainScene extends Phaser.Scene {
     this.images.forEach((image, index) => {
       this.tweens.add({
         targets: image,
-        x: config.width * (index - this.currentImageIndex),
+        x:
+          this.cameras.main.centerX +
+          config.width * (index - this.currentImageIndex),
         duration: 200,
         ease: "Power2",
       });
