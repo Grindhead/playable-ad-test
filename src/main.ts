@@ -12,9 +12,9 @@ const gameConfig = {
   parent: "game-container",
   backgroundColor: "#028af8",
   scale: {
-    mode: Phaser.Scale.HEIGHT_CONTROLS_WIDTH,
-    width: 1619,
-    height: 1997,
+    mode: Phaser.Scale.FIT,
+    width: config.width,
+    height: config.height,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
   scene: [Preloader, MainScene, EndCard],

@@ -1,4 +1,8 @@
 export const config = {
+  xGutter: 20,
+  yGutter: 10,
+  width: 390,
+  height: 844,
   adNetworkType: "applovin",
   googlePlayStoreLink:
     "https://play.google.com/store/apps/details?id=com.SolidDreamsStudio.WebSlingingRace",
