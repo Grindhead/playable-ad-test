@@ -12,61 +12,59 @@ const addNetworkInjection = () => {
         name: "Google Ads",
         type: "raw", // raw | js | css
         path: "./src/injections/google.html",
-        injectTo: "head" // head | body | head-prepend | body-prepend
+        injectTo: "head", // head | body | head-prepend | body-prepend
       };
     case "tiktok":
       return {
         name: "TikTok",
         type: "raw",
         path: "./src/injections/tiktok.html",
-        injectTo: "head"
+        injectTo: "head",
       };
     case "ironsource":
       return {
         name: "IronSource",
         type: "raw",
         path: "./src/injections/ironsource.html",
-        injectTo: "head"
-      
-      }; 
+        injectTo: "head",
+      };
     case "mraid":
       return {
         name: "Mraid",
         type: "raw",
         path: "./src/injections/mraid.html",
-        injectTo: "head"
+        injectTo: "head",
       };
     case "unityads":
       return {
         name: "Unity Ads",
         type: "raw",
         path: "./src/injections/mraid.html",
-        injectTo: "head"
+        injectTo: "head",
       };
     case "adcolony":
       return {
         name: "Ad Colony",
         type: "raw",
         path: "./src/injections/mraid.html",
-        injectTo: "head"
-    };
+        injectTo: "head",
+      };
     case "applovin":
       return {
         name: "Ad Colony",
         type: "raw",
         path: "./src/injections/mraid.html",
-        injectTo: "head"
-    };
+        injectTo: "head",
+      };
     case "kayzen":
       return {
         name: "Kayzen",
         type: "raw",
         path: "./src/injections/mraid.html",
-        injectTo: "head"
-    };
+        injectTo: "head",
+      };
   }
 };
-
 
 export default defineConfig({
   plugins: [
@@ -74,7 +72,7 @@ export default defineConfig({
     createHtmlPlugin({
       minify: true,
       removeComments: true,
-      entry: "src/main.js",
+      entry: "src/main.ts",
     }),
     zipPack({
       filter: (fileName, filePath, isDir) => {
@@ -83,12 +81,10 @@ export default defineConfig({
     }),
     {
       ...htmlInjectionPlugin({
-          injections: [
-            addNetworkInjection(),
-          ],
-      }), 
-      apply: "build"
-      }
+        injections: [addNetworkInjection()],
+      }),
+      apply: "build",
+    },
   ],
   build: {
     minify: "terser",
