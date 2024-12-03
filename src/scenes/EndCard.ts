@@ -3,6 +3,8 @@ import { config } from "../config";
 import { networkPlugin } from "../networkPlugin";
 
 export class EndCard extends Scene {
+  private backButton: Phaser.GameObjects.Sprite;
+
   constructor() {
     super("EndCard");
   }
@@ -35,5 +37,19 @@ export class EndCard extends Scene {
         "https://apps.apple.com/app/clean-manager/id123456789"
       );
     });
+
+    this.backButton = this.add.sprite(
+      config.xGutter,
+      config.yGutter,
+      "atlas",
+      "back.png"
+    );
+    this.backButton.setOrigin(0);
+    this.backButton.setInteractive();
+    this.backButton.once("pointerdown", () => {
+      this.scene.start("MainScene");
+    });
+
+    this.backButton.setScale(0.5);
   }
 }

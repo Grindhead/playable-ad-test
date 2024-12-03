@@ -10,6 +10,9 @@ export class MainScene extends Phaser.Scene {
 
   private phoneOverlay: Phaser.GameObjects.Sprite;
 
+  private acceptButton: Phaser.GameObjects.Sprite;
+  private closeButton: Phaser.GameObjects.Sprite;
+
   constructor() {
     super("MainScene");
   }
@@ -98,6 +101,29 @@ export class MainScene extends Phaser.Scene {
     );
 
     this.applyMask();
+    this.createButtons();
+  }
+
+  private createButtons() {
+    const spacing = 100;
+    const scale = 0.25;
+    const yPos = 480;
+    this.acceptButton = this.add.sprite(
+      this.cameras.main.centerX - spacing,
+      yPos,
+      "atlas",
+      "close.png"
+    );
+
+    this.closeButton = this.add.sprite(
+      this.cameras.main.centerX + spacing,
+      yPos,
+      "atlas",
+      "heart.png"
+    );
+
+    this.acceptButton.setScale(scale);
+    this.closeButton.setScale(scale);
   }
 
   private applyMask() {
@@ -146,9 +172,11 @@ export class MainScene extends Phaser.Scene {
 
   showEndCard() {
     // Destroy all carousel images
+    this.input.off("pointerup");
+
     this.images.forEach((image) => image.destroy());
     this.images = [];
-
+    this.currentImageIndex = 0;
     this.scene.start("EndCard");
   }
 }
