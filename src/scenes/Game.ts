@@ -28,9 +28,9 @@ export class MainScene extends Phaser.Scene {
       image.setScale(scaleX);
 
       // Position image relative to center of screen
-      image.x = this.images[index - 1]
-        ? this.images[index - 1].x + image.displayWidth
-        : -image.displayWidth / 2;
+      image.x =
+        this.cameras.main.centerX +
+        (index - this.currentImageIndex) * image.displayWidth;
       image.y = 40;
 
       this.images.push(image);
@@ -118,7 +118,7 @@ export class MainScene extends Phaser.Scene {
     this.images.forEach((image, index) => {
       const baseX =
         this.cameras.main.centerX +
-        config.width * (index - this.currentImageIndex);
+        (index - this.currentImageIndex) * image.displayWidth;
       image.x = baseX + dragDelta;
     });
   }
@@ -129,7 +129,7 @@ export class MainScene extends Phaser.Scene {
         targets: image,
         x:
           this.cameras.main.centerX +
-          config.width * (index - this.currentImageIndex),
+          (index - this.currentImageIndex) * image.displayWidth,
         duration: 200,
         ease: "Power2",
       });
