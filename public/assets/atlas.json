@@ -1,0 +1,230 @@
+{
+	"textures": [
+		{
+			"image": "atlas-default.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1842,
+				"h": 1306
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_1a2176f2-baf4-4d87-97f4-f934ecb76ac3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 588,
+						"h": 588
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 588,
+						"h": 588
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 588,
+						"h": 588
+					}
+				},
+				{
+					"filename": "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_1da69794-97c4-4388-a4d0-6c7921766c97.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 588,
+						"h": 588
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 588,
+						"h": 588
+					},
+					"frame": {
+						"x": 1,
+						"y": 591,
+						"w": 588,
+						"h": 588
+					}
+				},
+				{
+					"filename": "lowkeys.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 852,
+						"h": 124
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 852,
+						"h": 124
+					},
+					"frame": {
+						"x": 1,
+						"y": 1181,
+						"w": 852,
+						"h": 124
+					}
+				},
+				{
+					"filename": "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_9d3565cc-eaf6-4ae0-9ed4-db4fe6edc6a5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 588,
+						"h": 588
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 588,
+						"h": 588
+					},
+					"frame": {
+						"x": 591,
+						"y": 1,
+						"w": 588,
+						"h": 588
+					}
+				},
+				{
+					"filename": "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_96264e28-cb83-4dc7-a1b4-ab5dc2238aa3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 588,
+						"h": 588
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 588,
+						"h": 588
+					},
+					"frame": {
+						"x": 591,
+						"y": 591,
+						"w": 588,
+						"h": 588
+					}
+				},
+				{
+					"filename": "Art_Quiet_real_influencer_girl_selfie_amateur_look_natural_ligh_fb02a2bc-7366-4c01-a8f6-2098bc0b4dba.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 588,
+						"h": 588
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 588,
+						"h": 588
+					},
+					"frame": {
+						"x": 1181,
+						"y": 1,
+						"w": 588,
+						"h": 588
+					}
+				},
+				{
+					"filename": "Group 643.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 333,
+						"h": 333
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 3,
+						"w": 327,
+						"h": 327
+					},
+					"frame": {
+						"x": 1181,
+						"y": 591,
+						"w": 327,
+						"h": 327
+					}
+				},
+				{
+					"filename": "Group 644.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 333,
+						"h": 333
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 3,
+						"w": 327,
+						"h": 327
+					},
+					"frame": {
+						"x": 1181,
+						"y": 920,
+						"w": 327,
+						"h": 327
+					}
+				},
+				{
+					"filename": "Group 640@2x.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 358,
+						"h": 100
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 331,
+						"h": 100
+					},
+					"frame": {
+						"x": 1510,
+						"y": 591,
+						"w": 331,
+						"h": 100
+					}
+				},
+				{
+					"filename": "Frame-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 114,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 4,
+						"w": 93,
+						"h": 97
+					},
+					"frame": {
+						"x": 855,
+						"y": 1181,
+						"w": 93,
+						"h": 97
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:2075f5faf0f549aebe75943d6ba20369:c5e9afe4ef6635f90600fd65942fad91:5207f0b033e8998cf68e90902b6701b9$"
+	}
+}
