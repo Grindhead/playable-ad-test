@@ -37,7 +37,7 @@ export class MainScene extends Phaser.Scene {
         this.cameras.main.centerX,
         this.cameras.main.centerY,
         "gameAtlas",
-        "end_card"
+        "lowkeys.png"
       )
       .setInteractive();
     this.input.once("pointerdown", () => {
