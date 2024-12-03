@@ -41,8 +41,9 @@ export class MainScene extends Phaser.Scene {
       )
       .setInteractive();
     this.input.once("pointerdown", () => {
-      // mraid.open("https://apps.apple.com/app/clean-manager/id123456789");
-      networkPlugin.ctaPressed();
+      networkPlugin.ctaPressed(
+        "https://apps.apple.com/app/clean-manager/id123456789"
+      );
     });
   }
 }
