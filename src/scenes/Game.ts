@@ -3,15 +3,22 @@ import { networkPlugin } from "../networkPlugin";
 export class MainScene extends Phaser.Scene {
   private swipeCount: number = 0;
 
+  private lowkeys: Phaser.GameObjects.Sprite;
+
   constructor() {
     super("MainScene");
   }
 
-  preload() {
-    this.load.atlas("gameAtlas", "@assets/atlas.png", "@assets/atlas.json");
-  }
+  preload() {}
 
   create() {
+    this.lowkeys = this.add.sprite(
+      this.cameras.main.centerX,
+      this.cameras.main.centerY,
+      "atlas",
+      "lowkeys.png"
+    );
+
     this.input.on("pointerdown", (pointer) => {
       const startX = pointer.x;
 
@@ -32,6 +39,8 @@ export class MainScene extends Phaser.Scene {
   }
 
   showEndCard() {
+    this.lowkeys.destroy(true);
+
     this.add
       .sprite(
         this.cameras.main.centerX,
