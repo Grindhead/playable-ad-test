@@ -2,7 +2,7 @@ import { config } from "../config";
 
 export class MainScene extends Phaser.Scene {
   private currentImageIndex: number = 0;
-  private images: Phaser.GameObjects.Sprite[] = [];
+  private images: Phaser.GameObjects.Container[] = [];
   private isDragging: boolean = false;
   private dragStartX: number = 0;
 
@@ -20,30 +20,33 @@ export class MainScene extends Phaser.Scene {
 
     // Create and position all images
     imageFrames.forEach((frame, index) => {
-      const image = this.add.sprite(0, 0, "atlas", frame);
+      const container = this.add.container(0, 0);
+      const image = this.make.sprite({ x: 0, y: 0, key: "atlas", frame });
       image.setOrigin(0.5, 0);
+      container.add(image);
 
-      // Scale image to fit width with gutters
       const scaleX = (config.width - config.xGutter) / image.width;
       image.setScale(scaleX);
 
-      // Position image relative to center of screen
-      image.x =
+      // Store the width in the container for easy access
+      container.setData("width", image.displayWidth);
+
+      container.x =
         this.cameras.main.centerX +
         (index - this.currentImageIndex) * image.displayWidth;
-      image.y = 40;
+      container.y = 40;
 
-      this.images.push(image);
+      this.images.push(container);
     });
 
     this.lowkeys = this.add.sprite(
       this.cameras.main.centerX,
-      this.cameras.main.height - config.yGutter,
+      this.cameras.main.height - config.yGutter - 40,
       "atlas",
       "lowkeys.png"
     );
     this.lowkeys.setOrigin(0.5, 1);
-    const scaleX = (config.width - config.xGutter) / this.lowkeys.width;
+    const scaleX = (config.width - config.xGutter - 80) / this.lowkeys.width;
     this.lowkeys.setScale(scaleX);
 
     // Setup input handling
@@ -94,6 +97,10 @@ export class MainScene extends Phaser.Scene {
       "phonemockup.png"
     );
 
+    this.applyMask();
+  }
+
+  private applyMask() {
     // Create a custom mask shape if needed
     const maskShape = this.make.graphics();
     maskShape.fillStyle(0xffffff, 0.5);
@@ -112,24 +119,25 @@ export class MainScene extends Phaser.Scene {
     this.images.forEach((image) => {
       image.setMask(mask);
     });
+
+    this.lowkeys.setMask(mask);
   }
 
   private updateImagesPosition(dragDelta: number) {
-    this.images.forEach((image, index) => {
+    this.images.forEach((container, index) => {
+      const width = container.getData("width");
       const baseX =
-        this.cameras.main.centerX +
-        (index - this.currentImageIndex) * image.displayWidth;
-      image.x = baseX + dragDelta;
+        this.cameras.main.centerX + (index - this.currentImageIndex) * width;
+      container.x = baseX + dragDelta;
     });
   }
 
   private snapImagesToPosition() {
-    this.images.forEach((image, index) => {
+    this.images.forEach((container, index) => {
+      const width = container.getData("width");
       this.tweens.add({
-        targets: image,
-        x:
-          this.cameras.main.centerX +
-          (index - this.currentImageIndex) * image.displayWidth,
+        targets: container,
+        x: this.cameras.main.centerX + (index - this.currentImageIndex) * width,
         duration: 200,
         ease: "Power2",
       });
