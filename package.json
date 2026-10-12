@@ -17,7 +17,8 @@
   "homepage": "https://github.com/phaserjs/template-playable#readme",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "test": "node --test tests/ad-network.test.mjs"
   },
   "devDependencies": {
     "terser": "^5.27.0",

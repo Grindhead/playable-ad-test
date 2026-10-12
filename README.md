@@ -128,3 +128,12 @@ Created by [Phaser Studio](mailto:support@phaser.io). Powered by coffee, anime, 
 The Phaser logo and characters are &copy; 2011 - 2024 Phaser Studio Inc.
 
 All rights reserved.
+
+
+## Dashboard task verification
+
+MRAID loading and visibility previously left initialization incomplete, CTA calls omitted configured URLs, and arbitrary parent messages could inject SDK scripts. Startup now waits once for readiness/viewability, the CTA sprite uses the configured platform URL, and SDK bootstrap requires exact approved origins.
+
+Four SDK/bootstrap regressions, end-card/back handler regression, production build and six Chromium/Firefox startup cases passed.
+
+IronSource approved parent/SDK origins are intentionally empty until the provider contract is supplied. Native-container acceptance remains required.

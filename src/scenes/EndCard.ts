@@ -32,9 +32,10 @@ export class EndCard extends Scene {
     });
 
     endCardSprite.setInteractive();
-    this.input.once("pointerdown", () => {
+    endCardSprite.once("pointerdown", () => {
       networkPlugin.ctaPressed(
-        "https://apps.apple.com/app/clean-manager/id123456789"
+        config.googlePlayStoreLink,
+        config.appleStoreLink
       );
     });
 
