@@ -1,3 +1,4 @@
+import Phaser from "phaser";
 import { Preloader } from "./scenes/Preloader";
 import { MainScene } from "./scenes/Game";
 import { EndCard } from "./scenes/EndCard";
@@ -25,13 +26,11 @@ function initializePhaserGame() {
 }
 
 function setupGameInitialization(adNetworkType) {
-  const game = initializePhaserGame();
-
   if (mraidAdNetworks.has(adNetworkType)) {
-    networkPlugin.initMraid(() => game);
+    networkPlugin.initMraid(initializePhaserGame);
   } else {
     // vungle, google ads, facebook, ironsource, tiktok, mintegral
-    return game;
+    return initializePhaserGame();
   }
 }
 

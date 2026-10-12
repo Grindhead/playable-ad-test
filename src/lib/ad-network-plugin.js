@@ -207,50 +207,54 @@ var getPlatform = /* @__PURE__ */ __name((googlePlayStore, appleStore) => {
   }
   return url;
 }, "getPlatform");
-var getMraidState = /* @__PURE__ */ __name((initGame) => {
-  if (mraid.getState() === "loading") {
+var mraidInitializer;
+var mraidStarted = false;
+var mraidListening = false;
+var showMyAd = () => {
+  if (mraidStarted || typeof mraidInitializer !== "function") return;
+  mraidStarted = true;
+  if (typeof mraid !== "undefined") {
+    mraid.removeEventListener?.("ready", onSdkReady);
+    mraid.removeEventListener?.("viewableChange", viewableChangeHandler);
+  }
+  mraidInitializer();
+};
+var viewableChangeHandler = (viewable) => {
+  if (viewable === true) showMyAd();
+};
+var onSdkReady = () => {
+  if (mraidStarted) return;
+  mraid.removeEventListener?.("ready", onSdkReady);
+  if (!mraidListening) {
+    mraidListening = true;
+    mraid.addEventListener("viewableChange", viewableChangeHandler);
+  }
+  if (mraid.isViewable()) showMyAd();
+};
+var checkMraid = (initGame) => {
+  if (typeof initGame !== "function") throw new TypeError("MRAID initialization requires a function");
+  if (mraidInitializer || mraidStarted) return;
+  mraidInitializer = initGame;
+  if (typeof mraid === "undefined") {
+    showMyAd();
+  } else if (mraid.getState() === "loading") {
     mraid.addEventListener("ready", onSdkReady);
   } else {
-    onSdkReady(initGame);
+    onSdkReady();
   }
-}, "getMraidState");
-var onSdkReady = /* @__PURE__ */ __name((initGame) => {
-  mraid.addEventListener("viewableChange", viewableChangeHandler);
-  if (mraid.isViewable()) {
-    showMyAd(initGame());
-  }
-}, "onSdkReady");
-var showMyAd = /* @__PURE__ */ __name((initGame) => {
-  initGame();
-  return;
-}, "showMyAd");
-var viewableChangeHandler = /* @__PURE__ */ __name((viewable) => {
-  if (viewable) {
-    showMyAd();
-  } else {
-  }
-}, "viewableChangeHandler");
-var checkMraid = /* @__PURE__ */ __name((initGame) => {
-  if (typeof mraid === "undefined") {
-    console.warn("Mraid not found!");
-    initGame();
-    return;
-  } else {
-    getMraidState(initGame);
-  }
-}, "checkMraid");
-var initMraid = /* @__PURE__ */ __name((initGame) => {
-  checkMraid(initGame);
-}, "initMraid");
+};
+var initMraid = (initGame) => checkMraid(initGame);
 var ctaPressed4 = /* @__PURE__ */ __name((googlePlayStore, appleStore) => {
   if (typeof mraid === "undefined") {
     console.warn("Mraid called in development environment!");
   } else {
-    if (googlePlayStore !== "" && appleStore !== "") {
-      const url = getPlatform(googlePlayStore, appleStore);
-      mraid.open(url);
-    } else {
-      console.warn("googlePlayStore and appleStore parameters are empty!");
+    const selected = getPlatform(googlePlayStore, appleStore);
+    try {
+      const url = new URL(selected);
+      if (url.protocol !== "https:" || !["play.google.com", "apps.apple.com", "itunes.apple.com"].includes(url.hostname) || url.username || url.password) throw new Error("Invalid store URL");
+      mraid.open(url.href);
+    } catch {
+      console.warn("A valid HTTPS platform store link is required");
     }
   }
 }, "ctaPressed");
